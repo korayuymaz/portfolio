@@ -1,19 +1,34 @@
-import { FaHome } from "react-icons/fa";
-import Hero from "./components/Hero";
-import { FloatingNav } from "./components/ui/FlotingNav";
-import Grid from "./components/Grid";
-import RecentProjects from "./components/RecentProjects";
-import { navItems } from "@/data";
+import { Container } from "@/components/Container";
+import { Heading } from "@/components/Heading";
+import { Highlight } from "@/components/Highlight";
+import { Paragraph } from "@/components/Paragraph";
+import { Products } from "@/components/Products";
+import { TechStack } from "@/components/TechStack";
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="relative bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5">
-      <div className="max-w-7xl w-full">
-        <FloatingNav navItems={navItems} />
-        <Hero />
-        <Grid />
-        <RecentProjects />
-      </div>
-    </main>
+    <Container>
+      <span className="text-4xl">👋</span>
+      <Heading className="font-black">Hello there! I&apos;m John</Heading>
+      <Paragraph className="max-w-xl mt-4">
+        I&apos;m a full-stack developer that loves{" "}
+        <Highlight>building products</Highlight> and web apps that can impact
+        millions of lives
+      </Paragraph>
+      <Paragraph className="max-w-xl mt-4">
+        I&apos;m a senior software engineer with{" "}
+        <Highlight>7 years of experience</Highlight> building scalable web apps
+        that are performance optimized and good looking.
+      </Paragraph>
+      <Heading
+        as="h2"
+        className="font-black text-lg md:text-lg lg:text-lg mt-20 mb-4"
+      >
+        What I&apos;ve been working on
+      </Heading>
+      <Products />
+      <TechStack />
+    </Container>
   );
 }
